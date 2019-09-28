@@ -12,5 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	$products = Pedidoslinea\Product::orderBy('created_at','DESC')->paginate(50);
+    return view('welcome')->with(compact('products'));
 });
+
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
