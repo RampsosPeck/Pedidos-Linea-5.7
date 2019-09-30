@@ -1,7 +1,11 @@
 @extends('layouts.app')
 
+@section('title','Registrarme')
+@section('class-body','index-page')
+
 @section('content')
-<div class="container">
+<div class="page-header header-filter" data-parallax="true" style="background-image: url('{{ asset('') }}/assets/img/bg0.jpg');">
+    <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
 
@@ -87,6 +91,7 @@
             </div>
 
         </div>
+    </div>
     </div>
 </div>
 @endsection
