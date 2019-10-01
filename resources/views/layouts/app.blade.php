@@ -52,11 +52,16 @@
                             </a>
 
                             <ul class="dropdown-menu dropdown-with-icons" >
+                                @if(auth()->user()->admin)
+                                    <li>
+                                        <a href="{{ url('/admin/products') }}">Gestionar productos</a>
+                                    </li>
+                                @endif
                                 <li>
                                     <a href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('Desconectarse') }}
                                     </a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf

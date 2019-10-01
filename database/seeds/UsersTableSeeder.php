@@ -15,7 +15,8 @@ class UsersTableSeeder extends Seeder
     		'fullname' => 'Jorge Peralta',
     		'cedula' => '12345678',
     		'email' => 'jorge@gmail.com',
-    		'password' => bcrypt('secret'),
+            'password' => bcrypt('secret'),
+    		'admin' => true,
     	]);
     }
 }

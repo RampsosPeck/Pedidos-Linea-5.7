@@ -8,120 +8,47 @@
 </div>
 
 <div class="main main-raised">
-
     <div class="container">
-        <div class="section text-center">
-                <h2 class="title">Listado de Productos</h2>
-                <div class="table-responsive">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th class="text-center">#</th>
-                                <th>Name</th>
-                                <th>Job Position</th>
-                                <th>Since</th>
-                                <th class="text-right">Salary</th>
-                                <th class="text-right">Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="text-center">1</td>
-                                <td>Andrew Mike</td>
-                                <td>Develop</td>
-                                <td>2013</td>
-                                <td class="text-right">&euro; 99,225</td>
-                                <td class="td-actions text-right">
-                                    <button type="button" rel="tooltip" class="btn btn-info">
-                                        <i class="material-icons">person</i>
-                                    </button>
-                                    <button type="button" rel="tooltip" class="btn btn-success">
-                                        <i class="material-icons">edit</i>
-                                    </button>
-                                    <button type="button" rel="tooltip" class="btn btn-danger">
-                                        <i class="material-icons">close</i>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-
-                                <td class="text-center">2</td>
-                                <td>John Doe</td>
-                                <td>Design</td>
-                                <td>2012</td>
-                                <td class="text-right">&euro; 89,241</td>
-                                <td class="td-actions text-right">
-                                    <button type="button" rel="tooltip" class="btn btn-info btn-round">
-                                        <i class="material-icons">person</i>
-                                    </button>
-                                    <button type="button" rel="tooltip" class="btn btn-success btn-round">
-                                        <i class="material-icons">edit</i>
-                                    </button>
-                                    <button type="button" rel="tooltip" class="btn btn-danger btn-round">
-                                        <i class="material-icons">close</i>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="text-center">3</td>
-                                <td>Alex Mike</td>
-                                <td>Design</td>
-                                <td>2010</td>
-                                <td class="text-right">&euro; 92,144</td>
-                                <td class="td-actions text-right">
-                                    <button type="button" rel="tooltip" class="btn btn-info btn-simple">
-                                        <i class="material-icons">person</i>
-                                    </button>
-                                    <button type="button" rel="tooltip" class="btn btn-success btn-simple">
-                                        <i class="material-icons">edit</i>
-                                    </button>
-                                    <button type="button" rel="tooltip" class="btn btn-danger btn-simple">
-                                        <i class="material-icons">close</i>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="text-center">4</td>
-                                <td>Mike Monday</td>
-                                <td>Marketing</td>
-                                <td>2013</td>
-                                <td class="text-right">&euro; 49,990</td>
-                                <td class="td-actions text-right">
-                                    <button type="button" rel="tooltip" class="btn btn-info btn-round">
-                                        <i class="material-icons">person</i>
-                                    </button>
-                                    <button type="button" rel="tooltip" class="btn btn-success btn-round">
-                                        <i class="material-icons">edit</i>
-                                    </button>
-                                    <button type="button" rel="tooltip" class="btn btn-danger btn-round">
-                                        <i class="material-icons">close</i>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="text-center">5</td>
-                                <td>Paul Dickens</td>
-                                <td>Communication</td>
-                                <td>2015</td>
-                                <td class="text-right">&euro; 69,201</td>
-                                <td class="td-actions text-right">
-                                    <button type="button" rel="tooltip" class="btn btn-info">
-                                        <i class="material-icons">person</i>
-                                    </button>
-                                    <button type="button" rel="tooltip" class="btn btn-success">
-                                        <i class="material-icons">edit</i>
-                                    </button>
-                                    <button type="button" rel="tooltip" class="btn btn-danger">
-                                        <i class="material-icons">close</i>
-                                    </button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    </div>
+        <h2 class="title text-center">Dashboard</h2>
+        @if(session('status'))
+            <div class="alert alert-success">
+                {{ session('status') }}
             </div>
-    </div>
+        @endif
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="nav nav-pills nav-pills-icons" role="tablist">
+                    <!--
+                        color-classes: "nav-pills-primary", "nav-pills-info", "nav-pills-success", "nav-pills-warning","nav-pills-danger"
+                    -->
+                    <li class="active">
+                        <a href="#dashboard-1" role="tab" data-toggle="tab">
+                            <i class="material-icons">dashboard</i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#tasks-1" role="tab" data-toggle="tab">
+                            <i class="material-icons">list</i>
+                            Tasks
+                        </a>
+                    </li>
+                </ul>
+                <div class="tab-content tab-space">
+                    <div class="tab-pane active" id="dashboard-1">
+                      Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits.
+                      <br /><br />
+                      Dramatically visualize customer directed convergence without revolutionary ROI.
+                    </div>
+                    <div class="tab-pane" id="tasks-1">
+                        Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas.
+                        <br /><br />Dynamically innovate resource-leveling customer service for state of the art customer service.
+                    </div>
+                </div>
 
+            </div>
+        </div>
+    </div>
 </div>
 
 @endsection

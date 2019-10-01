@@ -4,7 +4,7 @@
 @section('class-body','landing-page')
 
 @section('content')
-<div class="page-header header-filter" data-parallax="true" style="background-image: url('{{ asset('') }}/assets/img/bg8.jpg');">
+<div class="page-header header-filter" data-parallax="true"  style="background-image: url('assets/img/bg8.jpg');">
     <div class="container">
         <div class="row">
             <div class="col-md-6">
@@ -73,7 +73,8 @@
                                 <div class="card card-product card-plain">
                                     <div class="card-image">
                                         <a href="#pablo">
-                                            <img src="{{ $product->images()->first()->image }}" alt="" />
+                                            {{-- <img src="{{ $product->images()->first()->image }}" alt="" /> --}}
+                                           <img src="{{ $product->featured_image_url }}" alt="" />
                                         </a>
                                     </div>
                                     <div class="card-content">
