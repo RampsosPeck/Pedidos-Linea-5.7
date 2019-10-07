@@ -3,6 +3,25 @@
 @section('title','AppShop')
 @section('class-body','landing-page')
 
+@section('styless')
+<style>
+    .row .col-md-3 {
+        margin-bottom: 1em;
+    }
+    .row {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display:         flex;
+        flex-wrap: wrap;
+    }
+    .row > [class*='col-'] {
+        display: flex;
+        flex-direction: column;
+    }
+</style>
+@endsection
+
 @section('content')
 <div class="page-header header-filter" data-parallax="true"  style="background-image: url('assets/img/bg8.jpg');">
     <div class="container">
@@ -73,13 +92,12 @@
                                 <div class="card card-product card-plain">
                                     <div class="card-image">
                                         <a href="#pablo">
-                                            {{-- <img src="{{ $product->images()->first()->image }}" alt="" /> --}}
                                            <img src="{{ $product->featured_image_url }}" alt="" />
                                         </a>
                                     </div>
                                     <div class="card-content">
                                         <h4 class="card-title">
-                                            <a href="#pablo"> {{ $product->name }} </a> <br />
+                                            <a href="{{ url('/products/'.$product->id) }}"> {{ $product->name }} </a> <br />
                                             <small class="text-muted">
                                                 {{ $product->category->name }}
                                             </small>
@@ -100,6 +118,9 @@
                                 </div>
                             </div>
                         @endforeach
+                       </div>
+                       <div class="text-center">
+                            {{ $products->links() }}
                        </div>
                    </div>
             </div>

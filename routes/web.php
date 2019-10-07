@@ -23,6 +23,7 @@ Route::get('/muestra', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/products/{id}','ProductController@show');
 /*
 Route::get('/admin/products','ProductController@index');
 Route::get('/admin/products/create','ProductController@create');
@@ -33,7 +34,7 @@ Route::delete('/admin/products/{id}','ProductController@destroy');
 
 */
 //Primero para el middleware auth y despues el middleware admin
-Route::middleware(['auth', 'admin'])->prefix('admin')->group(function(){
+Route::middleware(['auth', 'admin'])->prefix('admin')->namespace('Admin')->group(function(){
 	Route::get('/products','ProductController@index');
 	Route::get('/products/create','ProductController@create');
 	Route::post('/products','ProductController@store');
@@ -43,8 +44,8 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function(){
 
 	//Rutas para las imagenes
 	Route::get('/products/{id}/images','ImageController@index');//listado
-	Route::post('/products/{id}/images','ImageController@store');
-	Route::delete('/products/{id}/images','ImageController@destroy');
+	Route::post('/products/{id}/images','ImageController@store');//registrar
+	Route::delete('/products/{id}/images','ImageController@destroy');//eliminar
 
 	Route::get('/products/{id}/images/select/{image}','ImageController@select');
 

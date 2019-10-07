@@ -1,7 +1,8 @@
 <?php
 
-namespace Pedidoslinea\Http\Controllers;
+namespace Pedidoslinea\Http\Controllers\Admin;
 
+use Pedidoslinea\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Pedidoslinea\Product;
 use Pedidoslinea\ProductImage;
@@ -15,7 +16,7 @@ class ImageController extends Controller
      */
     public function index($id)
     {
-        $product = Product::find($id);
+        $product = Product::find($id);//Obtenemos el producto en base a su $id
         $images = $product->images; //Asi obtenemos las imagenes de una producto
         $images = $product->images()->orderBy('featured','DESC')->get();
         return view('admin.products.images.index', compact('product','images'));

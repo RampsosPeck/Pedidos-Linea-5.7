@@ -52,3 +52,26 @@
 </div>
 
 @endsection
+
+
+{{--
+Carrito    -> asociara a una tablas carritos
+id
+fecha_orden
+fecha_entrega
+user_id
+estado     -> Activo, Pendiente, Aprovado, Cancelar, Finalizar
+            Activo = Cuando un carrito de compras no sea todavia un pedido realizado por el usuario
+            Pendiente = Si el usuario ya termino de hacer su seleccion de productos y decide enviar su pedido al administrador
+            Aprovado = El administrador ve un pedido y Aprueba o cancela un pedido
+            Finaliza = Si el pedido fue aprobado y se genero su factura digital
+
+
+DetalleCarrito ->> se asociara a una tabla detalle_carritos
+id
+carrito_id
+producto_id
+cantidad
+descuento
+
+ --}}
