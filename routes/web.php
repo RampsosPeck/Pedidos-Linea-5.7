@@ -12,8 +12,8 @@
 */
 
 Route::get('/', function () {
-	$products = Pedidoslinea\Product::orderBy('created_at','DESC')->paginate(10);
-    return view('welcome')->with(compact('products'));
+	$categories = Pedidoslinea\Category::has('products')->get();//Category::orderBy('created_at','DESC')->paginate(10);
+    return view('welcome')->with(compact('categories'));
 });
 
 Route::get('/muestra', function () {
@@ -24,6 +24,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/products/{id}','ProductController@show');
+Route::get('/categories/{category}', 'CategoryController@show');
 /*
 Route::get('/admin/products','ProductController@index');
 Route::get('/admin/products/create','ProductController@create');

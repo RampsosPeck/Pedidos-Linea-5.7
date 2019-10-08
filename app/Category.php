@@ -13,4 +13,12 @@ class Category extends Model
 		return $this->hasMany(Product::class);
 	}
 
+	public function getUrlcateAttribute()
+    {
+    	if(substr($this->image, 0, 4) === "http"){
+    		return $this->image;
+    	}
+    	return '/images/categories/'.$this->image;
+    }
+
 }

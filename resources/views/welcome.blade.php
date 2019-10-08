@@ -48,6 +48,41 @@
                     <h5 class="description">Puedes revisar nuestra relación completa de productos, comparar precios y realizar tus pedidos cuando estés seguro.</h5>
                 </div>
             </div>
+            <div class="section">
+                   <div class="container">
+                       <h2 class="section-title">Nuestros Productos</h2>
+                       <div class="row">
+                        @foreach($categories as $category)
+                            <div class="col-md-3">
+                                <div class="card card-product card-plain">
+                                    <div class="card-image">
+                                        <a href="#pablo">
+                                           <img src="{{ $category->urlcate }}" alt="" />
+                                        </a>
+                                    </div>
+                                    <div class="card-content">
+                                        <h4 class="card-title">
+                                            <a href="{{ url('/categories/'.$category->id) }}"> {{ $category->name }} </a> <br />
+                                        </h4>
+                                        <p class="card-description"> {{ $category->description }} </p>
+                                        <div class="footer">
+                                            <div class="price-container">
+                                                <span class="price price-old"> &euro;1,430</span>
+                                                <span class="price price-new"> &euro;743</span>
+                                            </div>
+                                            <div class="stats">
+                                                <button type="button" rel="tooltip" title="" class="btn btn-just-icon btn-simple btn-rose" data-original-title="Saved to Wishlist">
+                                                   <i class="material-icons">favorite</i>
+                                               </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                       </div>
+                   </div>
+            </div>
             <div class="features">
                 <div class="row">
 
@@ -82,49 +117,6 @@
                     </div>
                 </div>
             </div>
-
-            <div class="section">
-                   <div class="container">
-                       <h2 class="section-title">Latest Offers</h2>
-                       <div class="row">
-                        @foreach($products as $product)
-                            <div class="col-md-3">
-                                <div class="card card-product card-plain">
-                                    <div class="card-image">
-                                        <a href="#pablo">
-                                           <img src="{{ $product->featured_image_url }}" alt="" />
-                                        </a>
-                                    </div>
-                                    <div class="card-content">
-                                        <h4 class="card-title">
-                                            <a href="{{ url('/products/'.$product->id) }}"> {{ $product->name }} </a> <br />
-                                            <small class="text-muted">
-                                                {{ $product->category->name }}
-                                            </small>
-                                        </h4>
-                                        <p class="card-description"> {{ $product->description }} </p>
-                                        <div class="footer">
-                                            <div class="price-container">
-                                                <span class="price price-old"> &euro;1,430</span>
-                                                <span class="price price-new"> &euro;743</span>
-                                            </div>
-                                            <div class="stats">
-                                                <button type="button" rel="tooltip" title="" class="btn btn-just-icon btn-simple btn-rose" data-original-title="Saved to Wishlist">
-                                                   <i class="material-icons">favorite</i>
-                                               </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-                       </div>
-                       <div class="text-center">
-                            {{ $products->links() }}
-                       </div>
-                   </div>
-            </div>
-
 
         </div>
 
